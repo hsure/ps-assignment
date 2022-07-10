@@ -8,6 +8,15 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Component;
 
+
+/**
+ * Driver loader helps with loading the driver names from the file.
+ * 
+ * @return List of all the driver objects 
+ * 
+ * @author hsure
+ * 
+ */
 @Component
 public class DriverLoader {
 

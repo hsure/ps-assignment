@@ -8,6 +8,15 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Component;
 
+
+/**
+ * Destination loader helps with loading the shipping destination addresses from the file.
+ * 
+ * @return List of all the destination objects
+ * 
+ * @author hsure
+ * 
+ */
 @Component
 public class DestinationLoader {
 

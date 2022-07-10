@@ -1,5 +1,7 @@
 package com.hari.DriverShipments;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.Banner;
 import org.springframework.boot.CommandLineRunner;
@@ -13,6 +15,8 @@ import java.util.Map;
 
 @SpringBootApplication
 public class DriverShipmentsApplication implements CommandLineRunner {
+	private static final Logger logger = LoggerFactory.getLogger(DriverShipmentsApplication.class);
+
 
 	@Autowired
 	private DestinationLoader destinationLoader;
@@ -30,6 +34,12 @@ public class DriverShipmentsApplication implements CommandLineRunner {
         app.run(args);
 	}
 
+	/**
+	 * Load the destinations and drivers from the two files provided
+	 * Apply driver assigner algorithm on destinations and drivers
+	 * Print the Destination and Driver pairs
+	 * Print the Total Suitability Score
+	 */
 	@Override
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
@@ -43,28 +53,28 @@ public class DriverShipmentsApplication implements CommandLineRunner {
 				
 				Double totalSuitabilityScore = 0.0;
 				
-				System.out.println("\n\n\n\n");
-				System.out.println("##############  DESTINATION-DRIVER MAP  ##############");
-				System.out.println("\n");
+				logger.info("\n\n\n\n");
+				logger.info("##############  DESTINATION-DRIVER MAP  ##############");
+				logger.info("\n");
 				
 				for(Map.Entry<Destination, Driver> entry: driverAssigner.mapDrivers(destinations, drivers).entrySet()) {
-					System.out.println("DESTINATION: "+entry.getKey().getAddress());
-					System.out.println("DRIVER: "+entry.getValue().getName()+"\n");
+					logger.info("DESTINATION: "+entry.getKey().getAddress());
+					logger.info("DRIVER: "+entry.getValue().getName()+"\n");
 					totalSuitabilityScore += entry.getKey().getSuitabilityScore();
 				}
 				
-				System.out.println("\n");
-				System.out.println("##############  TOTAL SUITABILITY SCORE  ##############");
-				System.out.println("\n");
-				System.out.println("Total Suitability Score - "+totalSuitabilityScore);
+				logger.info("\n");
+				logger.info("##############  TOTAL SUITABILITY SCORE  ##############");
+				logger.info("\n");
+				logger.info("Total Suitability Score - "+totalSuitabilityScore);
 				
 			} catch(IOException e) {
-				System.out.println("Error while reading from file "+ e.getMessage());
+				logger.info("Error while reading from file "+ e.getMessage());
 			} 
 			
 		} else {
-			System.out.println("Please check the commmand format: ");
-			System.out.println("java -jar target/DriverShipments-0.0.1-SNAPSHOT.jar <destinations-file> <drivers-file> ");
+			logger.info("Please check the commmand format: ");
+			logger.info("java -jar target/DriverShipments-0.0.1-SNAPSHOT.jar <destinations-file> <drivers-file> ");
 		}
 		
 	}

@@ -2,6 +2,13 @@ package com.hari.DriverShipments;
 
 import java.util.Set;
 
+
+/**
+ * Driver data object that holds driver's name and factors of length of the driver's name
+ * 
+ * @author hsure
+ *
+ */
 public class Driver {
 	
 	private final String name;
