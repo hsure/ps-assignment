@@ -1,5 +1,6 @@
 package com.hari.DriverShipments;
 
+import java.util.Arrays;
 import java.util.Set;
 
 
@@ -18,7 +19,7 @@ import java.util.Set;
  *
  */
 public class Destination {
-
+	
 	private final String address;
 	private Set<Integer> factors;
 	private Double suitabilityScore;
@@ -27,6 +28,7 @@ public class Destination {
 		this.address = address;
 		this.factors = ScoreUtils.getFactors(this.address);
 		this.suitabilityScore = this.createSuitabilityScore(this.address);
+		System.out.println(this.address+" score is: "+this.getSuitabilityScore()+" Facors are: "+Arrays.toString(this.getFactors().toArray()));
 	}
 	
 	/**
