@@ -60,12 +60,11 @@ public class DriverShipmentsApplication implements CommandLineRunner {
 				
 			} catch(IOException e) {
 				System.out.println("Error while reading from file "+ e.getMessage());
-			} catch(Exception e) {
-				System.out.println("Error while processing "+ e.getMessage());
-			}
+			} 
 			
 		} else {
-			
+			System.out.println("Please check the commmand format: ");
+			System.out.println("java -jar target/DriverShipments-0.0.1-SNAPSHOT.jar <destinations-file> <drivers-file> ");
 		}
 		
 	}

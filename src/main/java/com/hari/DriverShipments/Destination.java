@@ -1,16 +1,15 @@
 package com.hari.DriverShipments;
 
-import java.util.HashSet;
 import java.util.Set;
 
 public class Destination {
 
-	private String address;
+	private final String address;
 	private Set<Integer> factors;
 	private Double suitabilityScore;
 	
 	public Destination(String address) {
-		this.setAddress(address);
+		this.address = address;
 		this.factors = ScoreUtils.getFactors(this.address);
 		this.suitabilityScore = createSuitabilityScore(this.address);
 	}
@@ -52,15 +51,5 @@ public class Destination {
 
 	public String getAddress() {
 		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-		this.setFactors(this.address);
-		this.createSuitabilityScore(address);
-	}
-
-	private void setFactors(String address) {
-		this.factors = ScoreUtils.getFactors(address);		
 	}
 }

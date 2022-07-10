@@ -1,6 +1,5 @@
 package com.hari.DriverShipments;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -39,10 +38,10 @@ public class DriverAssigner {
 				intersection.retainAll(drivers.get(j).getFactors());
 				if(intersection.size() > 1) {
 					matrix[i][j] = destinations.get(i).getSuitabilityScore() * 1.5;
-					System.out.println("destination: "+destinations.get(i).getAddress()+ "Destination Factors: " + Arrays.toString(destinations.get(i).getFactors().toArray()) + "Driver Factors: "+ Arrays.toString(drivers.get(j).getFactors().toArray()) + "Driver: " + drivers.get(j).getName() +" score: "+matrix[i][j]);
+					//System.out.println("destination: "+destinations.get(i).getAddress()+ "Destination Factors: " + Arrays.toString(destinations.get(i).getFactors().toArray()) + "Driver Factors: "+ Arrays.toString(drivers.get(j).getFactors().toArray()) + "Driver: " + drivers.get(j).getName() +" score: "+matrix[i][j]);
 				} else {
 					matrix[i][j] = destinations.get(i).getSuitabilityScore();
-					System.out.println("destination: "+destinations.get(i).getAddress()+ "Destination Factors: " + Arrays.toString(destinations.get(i).getFactors().toArray()) + "Driver Factors: "+ Arrays.toString(drivers.get(j).getFactors().toArray()) + "Driver: " + drivers.get(j).getName() +" score: "+matrix[i][j]);
+					//System.out.println("destination: "+destinations.get(i).getAddress()+ "Destination Factors: " + Arrays.toString(destinations.get(i).getFactors().toArray()) + "Driver Factors: "+ Arrays.toString(drivers.get(j).getFactors().toArray()) + "Driver: " + drivers.get(j).getName() +" score: "+matrix[i][j]);
 				}
 			}
 		}

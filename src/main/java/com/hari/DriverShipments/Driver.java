@@ -4,16 +4,12 @@ import java.util.Set;
 
 public class Driver {
 	
-	private String name;
+	private final String name;
 	private Set<Integer> factors;
 	
 	public Driver(String name) {
-		setName(name);
+		this.name = name;
 		this.factors = ScoreUtils.getFactors(name);
-	}
-	
-	public void setFactors(Set<Integer> factors) {
-		this.factors = factors;
 	}
 	
 	public Set<Integer> getFactors() {
@@ -22,10 +18,6 @@ public class Driver {
 
 	public String getName() {
 		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 	
 	
