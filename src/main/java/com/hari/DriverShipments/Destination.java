@@ -28,7 +28,6 @@ public class Destination {
 		this.address = address;
 		this.factors = ScoreUtils.getFactors(this.address);
 		this.suitabilityScore = this.createSuitabilityScore(this.address);
-		System.out.println(this.address+" score is: "+this.getSuitabilityScore()+" Facors are: "+Arrays.toString(this.getFactors().toArray()));
 	}
 	
 	/**
