@@ -20,13 +20,31 @@ Core problem in the question is the [Assignment Problem](https://en.wikipedia.or
 
 
 ## Requirements to run this service locally
-- java18(brew install openjdk) ( using [jenv](https://www.jenv.be/) is ideal, so that your workspaces wouldn't be disrupted )
-- maven (brew install maven)
+On Mac
+- jenv ( brew install jenv )
+- java18 ( brew install openjdk ) ( using [jenv](https://www.jenv.be/) is ideal, so that your workspaces wouldn't be disrupted )
+- jenv add jenv add /Library/Java/JavaVirtualMachines/jdk-18.0.1.1.jdk/Contents/Home
+- maven (brew install maven )
 
 ### Instructions
+
+- git clone git@github.com:hsure/ps-assignment.git
+- cd ps-assignment
+- jenv local 18.0
 - mvn package (builds the jar)
-- java -jar target/DriverShipments-0.0.1-SNAPSHOT.jar <destinations-file-path> <drivers-file-path>
+- java -jar target/DriverShipments-0.0.1-SNAPSHOT.jar **destinations-file-path** **drivers-file-path**
+
+Note: provide destinations file and drivers file while running the last command
 
 ### Test results
 
 ![Sample test results](images/TestResults.png)
+
+### Coverage report
+
+Have covered only the happy paths
+![Coverage report](images/Coverage.png)
+
+### Thanks to
+
+[KevinStern](https://github.com/KevinStern) for the [Hungarian Algorithm Implementation](https://github.com/KevinStern/software-and-algorithms/blob/master/src/main/java/blogspot/software_and_algorithms/stern_library/optimization/HungarianAlgorithm.java)
