@@ -8,11 +8,9 @@ import org.springframework.context.ApplicationContext;
 
 @SpringBootTest
 class DriverShipmentsApplicationTests {
-	
-	@Test
-	void contextLoads(ApplicationContext context) {
-		assertThat(context).isNotNull();
-	}
 
-	
+  @Test
+  void contextLoads(ApplicationContext context) {
+    assertThat(context).isNotNull();
+  }
 }

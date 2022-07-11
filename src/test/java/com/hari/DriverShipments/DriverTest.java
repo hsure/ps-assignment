@@ -7,16 +7,14 @@ import org.junit.jupiter.api.Test;
 
 class DriverTest {
 
-	private Driver driver;
-	
-	@Test
-	void testDestinationPropertiesUponCreation() {
-		String name = "test driver";
-		
+  private Driver driver;
 
-		driver = new Driver(name);
-		assertThat(driver).isNotNull();
-		assertThat(driver.getName()).isEqualTo(name);
-	}
+  @Test
+  void testDestinationPropertiesUponCreation() {
+    String name = "test driver";
 
+    driver = new Driver(name);
+    assertThat(driver).isNotNull();
+    assertThat(driver.getName()).isEqualTo(name);
+  }
 }
