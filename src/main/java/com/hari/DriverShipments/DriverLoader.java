@@ -21,6 +21,6 @@ public class DriverLoader {
   public List<Driver> loadDrivers(String file) throws IOException {
     List<String> drivers = Files.readAllLines(Paths.get(file));
 
-    return drivers.stream().map(s -> new Driver(s)).collect(Collectors.toList());
+    return drivers.stream().map(Driver::new).toList();
   }
 }

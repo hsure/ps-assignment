@@ -26,6 +26,10 @@ class DriverAssignerTest {
 
     Map<Destination, Driver> map = driverAssigner.mapDrivers(destinations, drivers);
 
-    assertThat(map.size()).isEqualTo(3);
+    assertThat(map).hasSize(3);
+    assertThat(
+      map.keySet().stream().map(a -> a.getSuitabilityScore()).reduce(0.0, Double::sum)
+    )
+      .isEqualTo(20.5);
   }
 }
